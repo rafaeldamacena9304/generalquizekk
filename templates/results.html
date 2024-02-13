@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<main class="main">
+    <header class="nav__bar">
+        <img class="icon" src="/static/icon.svg"><span class="nav__title"> General Quiz</span>
+        <a class="nav__link {{'nav__link-current' if request.path == url_for('homepage') }}" href="{{ url_for('homepage') }}">
+            Homepage
+        </a>
+        <a class="nav__link {{'nav__link-current' if request.path == url_for('contact') }}" href="{{ url_for('contact') }}">
+            Contact
+        </a>
+        <a class="nav__link {{'nav__link-current' if request.path == url_for('about') }}" href="{{ url_for('about') }}">
+            About
+        </a>
+
+    </header>
+</main>
+<p> caguei para aparência desta página ok não gostar respeitar sexo zapkkkkkkkkkkkkkkkkkkkkkkkkkkkk</p>
+<p> você acertou {{ penis }} questões
+</p>
+<form method="POST" action="{{url_for('delete')}}">
+<input type="hidden" name="penis">
+<button type="submit">Voltar à página inicial</button>
+</form>
+{% block content %}
+{% endblock %}
+</body>
+</html>
